@@ -1,0 +1,29 @@
+﻿@model List<Car>
+
+
+<div class="d-flex in Model">
+
+    @foreach (var item in Model)
+    {
+        <div class="card" style="width:20rem;">
+            <p>@item.Id</p>
+            <img src="@item.ImageUrl" class="card-img-top" alt="image">
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <p class="card-text">@item.Vendor</p>
+                <p class="card-text">@item.Price</p>
+
+
+            </div>
+            <div class="card">
+                @* <a href="@Url.Action("GetCar","Car", new {id = item.Id})" class="card-link">Info</a> *@
+               
+                <a href="@Url.Action("EditCar","Car", new {id = item.Id})" class="card-link">Info</a>
+
+            </div>
+
+        </div>
+    }
+</div>
+
+
